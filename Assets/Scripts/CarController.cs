@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    [SerializeField] private float motorForce = 1000.0f;
-    [SerializeField] private float brakeForce = 3000.0f;
-    [SerializeField] private float maximumSteeringAngle = 30.0f;
-
     [SerializeField] private WheelCollider frontRightWheelCollider;
     [SerializeField] private WheelCollider frontLeftWheelCollider;
     [SerializeField] private WheelCollider rearRightWheelCollider;
