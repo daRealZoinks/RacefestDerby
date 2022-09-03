@@ -1,83 +1,51 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class AxleInfo
+{
+    public WheelCollider leftWheel;
+    public WheelCollider rightWheel;
+    public bool motor; // is this wheel attached to motor?
+    public bool steering; // does this wheel apply steer angle?
+}
 
 public class CarController : MonoBehaviour
 {
-    [SerializeField] private WheelCollider frontRightWheelCollider;
-    [SerializeField] private WheelCollider frontLeftWheelCollider;
-    [SerializeField] private WheelCollider rearRightWheelCollider;
-    [SerializeField] private WheelCollider rearLeftWheelCollider;
+    [SerializeField] private List<AxleInfo> axleInfos;
 
-    [SerializeField] private Transform frontRightWheelTransform;
-    [SerializeField] private Transform frontLeftWheelTransform;
-    [SerializeField] private Transform rearRightWheelTransform;
-    [SerializeField] private Transform rearLeftWheelTransform;
+    private float _motor;
+    public float Motor { set => _motor = value; }
 
-    private float _currentMotorForce;
-    public float CurrentMotorForce
+    private float _steering;
+    public float Steering { set => _steering = value; }
+
+    public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
-        set
+        Transform visualWheel = collider.transform.GetChild(0);
+
+        collider.GetWorldPose(out var position, out var rotation);
+
+        visualWheel.transform.SetPositionAndRotation(position, rotation);
+    }
+
+    public void FixedUpdate()
+    {
+        foreach (AxleInfo axleInfo in axleInfos)
         {
-            _currentMotorForce = value;
+            if (axleInfo.steering)
+            {
+                axleInfo.leftWheel.steerAngle = _steering;
+                axleInfo.rightWheel.steerAngle = _steering;
+            }
+            if (axleInfo.motor)
+            {
+                axleInfo.leftWheel.motorTorque = _motor;
+                axleInfo.rightWheel.motorTorque = _motor;
+            }
+            ApplyLocalPositionToVisuals(axleInfo.leftWheel);
+            ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
-    }
-
-    private float _currentBrakeForce;
-    public float CurentBreakForce
-    {
-        set
-        {
-            _currentBrakeForce = value;
-        }
-    }
-
-    private float _currentSteerAngle;
-    public float CurrentSteerAngle
-    {
-        set
-        {
-            _currentSteerAngle = value;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        HandleMotor(_currentMotorForce);
-        HandleBrake(_currentBrakeForce);
-        HandleSteering(_currentSteerAngle);
-    }
-
-    private void Update()
-    {
-        UpdateWheel(frontLeftWheelCollider, frontLeftWheelTransform);
-        UpdateWheel(frontRightWheelCollider, frontRightWheelTransform);
-        UpdateWheel(rearLeftWheelCollider, rearLeftWheelTransform);
-        UpdateWheel(rearRightWheelCollider, rearRightWheelTransform);
-    }
-
-
-    void HandleMotor(float motorTorque)
-    {
-        frontRightWheelCollider.motorTorque = motorTorque;
-        frontLeftWheelCollider.motorTorque = motorTorque;
-    }
-
-    void HandleBrake(float brakeTorque)
-    {
-        frontRightWheelCollider.brakeTorque = brakeTorque;
-        frontLeftWheelCollider.brakeTorque = brakeTorque;
-        rearRightWheelCollider.brakeTorque = brakeTorque;
-        rearLeftWheelCollider.brakeTorque = brakeTorque;
-    }
-
-    void HandleSteering(float steerAngle)
-    {
-        frontRightWheelCollider.steerAngle = steerAngle;
-        frontLeftWheelCollider.steerAngle = steerAngle;
-    }
-
-    void UpdateWheel(WheelCollider wheelCollider, Transform wheelTrasform)
-    {
-        wheelCollider.GetWorldPose(out var position, out var rotation);
-        wheelTrasform.SetPositionAndRotation(position, rotation);
     }
 }

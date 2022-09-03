@@ -6,19 +6,10 @@
             "id": "84dae16b-b35d-49df-b28c-5b238995fc21",
             "actions": [
                 {
-                    "name": "Accelerate",
+                    "name": "Accelerate/Reverse",
                     "type": "Value",
                     "id": "ae9a5ce4-89c9-4219-a86f-b664448948c9",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Decelerate",
-                    "type": "Value",
-                    "id": "eb61f943-fe6c-4b5e-9a1d-eefc0a373b70",
-                    "expectedControlType": "Analog",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -62,26 +53,70 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "b97f61ae-a3ff-4abb-bc1e-2a1d62467e3c",
-                    "path": "<Keyboard>/w",
+                    "name": "WS",
+                    "id": "ec4d5b01-af1a-4278-adbf-07adea05a419",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Accelerate",
-                    "isComposite": false,
+                    "groups": "",
+                    "action": "Accelerate/Reverse",
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "b5b1d573-ca78-4963-b35c-15264dac9912",
+                    "name": "positive",
+                    "id": "08e83b19-b2a7-4a59-aaf0-64f30a2fd013",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate/Reverse",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "c2dc0bf2-8ac9-417b-a61f-4d4f2e0ff349",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate/Reverse",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "de3ca17b-7320-4b2b-8c2e-7cf5fc3bda85",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate/Reverse",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "4e92c86a-1624-4a1e-a1bd-d95be36cb7d5",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Accelerate",
+                    "groups": "",
+                    "action": "Accelerate/Reverse",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "ae50707a-7897-4729-a953-3c8394548f77",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate/Reverse",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -126,28 +161,6 @@
                     "action": "Steering",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "43001c1f-1ff3-4963-aac5-715f1064a365",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Decelerate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8dba318e-acce-48c1-b2e5-53ea1ac1339b",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Decelerate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",

@@ -1,38 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4360994307291775773
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4360994307291775772}
-  m_Layer: 0
-  m_Name: Colliders
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4360994307291775772
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4360994307291775773}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4360994309166749861}
-  - {fileID: 4360994307594114049}
-  m_Father: {fileID: 4360994307573884859}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4360994307393082875
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +28,8 @@ Transform:
   m_LocalPosition: {x: 0.77, y: -0.381, z: -1.378}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4360994308460416555}
   m_Father: {fileID: 4360994307594114049}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,7 +41,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360994307393082875}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.35
+  m_Radius: 0.5
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -89,7 +57,7 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
@@ -127,7 +95,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4360994308442343903}
+  m_Father: {fileID: 4360994309166749861}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4360994307419256284
@@ -599,12 +567,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360994307440998215}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.77, y: -0.53, z: 1.837}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.14899996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4360994308243223671}
+  m_Father: {fileID: 4360994307715212750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4360994307440998234
@@ -2086,8 +2054,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4360994308442343903}
-  - {fileID: 4360994307291775772}
+  - {fileID: 4360994309166749861}
+  - {fileID: 4360994307594114049}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2135,7 +2103,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 84dae16b-b35d-49df-b28c-5b238995fc21
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &4360994307573884863
@@ -2152,7 +2120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Motor
-      Force","value":{"$content":1000.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      Force","value":{"$content":400.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Break
       Force","value":{"$content":3000.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Maximum
@@ -2174,10 +2142,10 @@ MonoBehaviour:
   _data:
     _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Car
       controller","summary":"This thing controlls the car, but its gunna b pretty
-      rushed","pan":{"x":1290.811,"y":154.228},"zoom":1.0,"elements":[{"FloatValue":{"unit":{"$ref":"10"}},"Vector2Value":null,"InputActionChangeType":"OnHold","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"ae9a5ce4-89c9-4219-a86f-b664448948c9","name":"Accelerate","expectedControlType":"Analog","type":"Value","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":210.0,"y":13.0},"guid":"b33d493a-330f-4401-8cac-b1a2405549b3","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventFloat","$id":"10"},{"chainable":false,"member":{"name":"CurrentSteerAngle","parameterTypes":null,"targetType":"CarController","targetTypeName":"CarController","$version":"A"},"defaultValues":{"target":null,"input":{"$content":0.0,"$type":"System.Single"}},"position":{"x":1266.0,"y":310.0},"guid":"f6416982-e562-431b-bb13-ea356191a29f","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"14"},{"chainable":false,"member":{"name":"CurrentSteerAngle","parameterTypes":null,"targetType":"CarController","targetTypeName":"CarController","$version":"A"},"defaultValues":{"target":null,"input":{"$content":0.0,"$type":"System.Single"}},"position":{"x":1402.0,"y":22.0},"guid":"d21f453c-4247-4947-be39-3bcc6bf6cdf6","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"17"},{"chainable":false,"member":{"name":"CurrentMotorForce","parameterTypes":null,"targetType":"CarController","targetTypeName":"CarController","$version":"A"},"defaultValues":{"target":null,"input":{"$content":0.0,"$type":"System.Single"}},"position":{"x":688.0,"y":17.0},"guid":"71d028c7-7f4f-4d2d-bb85-fb1fc4dba744","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"20"},{"chainable":false,"member":{"name":"CurentBreakForce","parameterTypes":null,"targetType":"CarController","targetTypeName":"CarController","$version":"A"},"defaultValues":{"target":null,"input":{"$content":0.0,"$type":"System.Single"}},"position":{"x":-49.0,"y":290.0},"guid":"7f0f7f35-7f58-4798-bc7f-ecf62d47305b","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"23"},{"chainable":false,"member":{"name":"CurentBreakForce","parameterTypes":null,"targetType":"CarController","targetTypeName":"CarController","$version":"A"},"defaultValues":{"target":null,"input":{"$content":0.0,"$type":"System.Single"}},"position":{"x":-50.0,"y":19.0},"guid":"9d97040b-31e4-4b0c-85df-48a4b492927a","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"26"},{"defaultValues":{},"position":{"x":513.0,"y":105.0},"guid":"e4a61b2c-e509-454e-a072-1ded8e0e996a","$version":"A","$type":"Unity.VisualScripting.GenericMultiply","$id":"29"},{"type":"System.Single","value":{"$content":0.0,"$type":"System.Single"},"defaultValues":{},"position":{"x":-227.0,"y":418.0},"guid":"3001188e-db57-411c-8f9d-aa8a45ce1fab","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"31"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Break
-      Force","$type":"System.String"},"object":null},"position":{"x":-290.0,"y":148.0},"guid":"dfdae73b-2d17-4846-89f2-19c34611ffaf","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"33"},{"type":"System.Single","value":{"$content":0.0,"$type":"System.Single"},"defaultValues":{},"position":{"x":1070.0,"y":440.0},"guid":"84386868-9237-4fc0-b9bf-ad9a558cd2c0","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"35"},{"chainable":false,"member":{"name":"CurrentMotorForce","parameterTypes":null,"targetType":"CarController","targetTypeName":"CarController","$version":"A"},"defaultValues":{"target":null,"input":{"$content":0.0,"$type":"System.Single"}},"position":{"x":605.0,"y":307.0},"guid":"ba1a22a1-f15e-4ce2-ab5d-4d8cea3f247d","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"37"},{"FloatValue":null,"Vector2Value":null,"InputActionChangeType":"OnReleased","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"806c8a48-eb1f-4835-aeb4-4dea231ae000","name":"Break","expectedControlType":"Button","type":"Button","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":-371.0,"y":286.0},"guid":"5940f41a-42f1-45cc-95a5-f4f06fbf7762","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventButton","$id":"40"},{"FloatValue":null,"Vector2Value":null,"InputActionChangeType":"OnPressed","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"806c8a48-eb1f-4835-aeb4-4dea231ae000","name":"Break","expectedControlType":"Button","type":"Button","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":-370.0,"y":13.0},"guid":"a966f080-8f09-4aee-a230-912c20593d4c","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventButton","$id":"43"},{"FloatValue":{"unit":{"$ref":"46"}},"Vector2Value":null,"InputActionChangeType":"OnHold","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"5306bcb2-0ed5-411f-8102-002fe7869a9e","name":"Steering","expectedControlType":"Axis","type":"Value","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":931.0,"y":16.0},"guid":"f95c27d3-b18c-4006-822d-602dfb869f74","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventFloat","$id":"46"},{"FloatValue":{"unit":{"$ref":"50"}},"Vector2Value":null,"InputActionChangeType":"OnReleased","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"5306bcb2-0ed5-411f-8102-002fe7869a9e","name":"Steering","expectedControlType":"Axis","type":"Value","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":928.0,"y":306.0},"guid":"dd9db169-c6b7-4148-9eda-64c3d207a369","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventFloat","$id":"50"},{"FloatValue":{"unit":{"$ref":"54"}},"Vector2Value":null,"InputActionChangeType":"OnReleased","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"ae9a5ce4-89c9-4219-a86f-b664448948c9","name":"Accelerate","expectedControlType":"Analog","type":"Value","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":291.0,"y":303.0},"guid":"85ea9d0e-5678-48d9-9864-848a6f68a63a","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventFloat","$id":"54"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Maximum
-      Steering Angle","$type":"System.String"},"object":null},"position":{"x":937.0,"y":159.0},"guid":"cef1eba9-38fa-4b02-b4fb-fd85c78a83dc","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"58"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Motor
-      Force","$type":"System.String"},"object":null},"position":{"x":285.0,"y":160.0},"guid":"e430270c-4621-41ed-8566-29359a7806d7","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"60"},{"defaultValues":{},"position":{"x":1234.0,"y":108.0},"guid":"6e03f422-78cf-48e3-9594-5a6a0871c01b","$version":"A","$type":"Unity.VisualScripting.GenericMultiply","$id":"62"},{"type":"System.Single","value":{"$content":0.0,"$type":"System.Single"},"defaultValues":{},"position":{"x":437.0,"y":440.0},"guid":"35ffac88-5ea1-43cb-95e6-4546bb25eb04","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"64"},{"sourceUnit":{"$ref":"54"},"sourceKey":"trigger","destinationUnit":{"$ref":"37"},"destinationKey":"assign","guid":"75aefe55-26be-4c8d-824d-7d2967c3488b","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"50"},"sourceKey":"trigger","destinationUnit":{"$ref":"14"},"destinationKey":"assign","guid":"83c1da07-e034-46b2-ae1a-5b8f6b8feb35","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"46"},"sourceKey":"trigger","destinationUnit":{"$ref":"17"},"destinationKey":"assign","guid":"4fde01f1-2cfc-4d3b-a40d-946cbe2ae6f1","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"20"},"destinationKey":"assign","guid":"73c6088f-1650-4010-944f-753c63978ec8","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"40"},"sourceKey":"trigger","destinationUnit":{"$ref":"23"},"destinationKey":"assign","guid":"ad082d0d-1b2e-4bcc-900e-03ad52e8293c","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"43"},"sourceKey":"trigger","destinationUnit":{"$ref":"26"},"destinationKey":"assign","guid":"98f9efe8-98d7-43be-afc9-fc7fde566cdb","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"64"},"sourceKey":"output","destinationUnit":{"$ref":"37"},"destinationKey":"input","guid":"d18c4711-7439-41f1-951e-12ea8a363b33","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"29"},"sourceKey":"product","destinationUnit":{"$ref":"20"},"destinationKey":"input","guid":"c95afb15-9150-40ca-b545-47db1bc687d0","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"31"},"sourceKey":"output","destinationUnit":{"$ref":"23"},"destinationKey":"input","guid":"d52994c2-57b5-4714-a057-63659d0e7f51","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"33"},"sourceKey":"value","destinationUnit":{"$ref":"26"},"destinationKey":"input","guid":"5ff56d33-b244-44d6-bdce-25f5bc6af449","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"FloatValue","destinationUnit":{"$ref":"29"},"destinationKey":"a","guid":"7b2fb66e-67a1-4e96-9ae8-24b9a3a878e8","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"58"},"sourceKey":"value","destinationUnit":{"$ref":"62"},"destinationKey":"b","guid":"d2c07e84-362c-4377-b3f7-6f048fdeddd7","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"46"},"sourceKey":"FloatValue","destinationUnit":{"$ref":"62"},"destinationKey":"a","guid":"af492256-a9a3-4ff0-8162-ba5189b390c6","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"62"},"sourceKey":"product","destinationUnit":{"$ref":"17"},"destinationKey":"input","guid":"b14d07e4-adc4-47ea-9f79-1092058ab012","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"60"},"sourceKey":"value","destinationUnit":{"$ref":"29"},"destinationKey":"b","guid":"cd545e23-6b86-442b-ad06-53b7b01fbc4b","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"35"},"sourceKey":"output","destinationUnit":{"$ref":"14"},"destinationKey":"input","guid":"19691711-e57e-4fa2-bb1d-25bcacf9b42d","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
+      rushed","pan":{"x":1179.764,"y":270.3163},"zoom":0.8,"elements":[{"FloatValue":{"unit":{"$ref":"10"}},"Vector2Value":null,"InputActionChangeType":"OnHold","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"ae9a5ce4-89c9-4219-a86f-b664448948c9","name":"Accelerate","expectedControlType":"Analog","type":"Value","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":210.0,"y":13.0},"guid":"b33d493a-330f-4401-8cac-b1a2405549b3","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventFloat","$id":"10"},{"type":"System.Single","value":{"$content":0.0,"$type":"System.Single"},"defaultValues":{},"position":{"x":-227.0,"y":418.0},"guid":"3001188e-db57-411c-8f9d-aa8a45ce1fab","$version":"A","$type":"Unity.VisualScripting.Literal"},{"FloatValue":{"unit":{"$ref":"16"}},"Vector2Value":null,"InputActionChangeType":"OnReleased","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"5306bcb2-0ed5-411f-8102-002fe7869a9e","name":"Steering","expectedControlType":"Axis","type":"Value","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":963.0,"y":304.0},"guid":"dd9db169-c6b7-4148-9eda-64c3d207a369","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventFloat","$id":"16"},{"chainable":false,"member":{"name":"Steering","parameterTypes":null,"targetType":"CarController","targetTypeName":"CarController","$version":"A"},"defaultValues":{"target":null,"input":{"$content":0.0,"$type":"System.Single"}},"position":{"x":1269.0,"y":310.0},"guid":"e3c45b91-fa86-42b8-a246-2c58b81a992d","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"20"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Break
+      Force","$type":"System.String"},"object":null},"position":{"x":-290.0,"y":148.0},"guid":"dfdae73b-2d17-4846-89f2-19c34611ffaf","$version":"A","$type":"Unity.VisualScripting.GetVariable"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Motor
+      Force","$type":"System.String"},"object":null},"position":{"x":285.0,"y":160.0},"guid":"e430270c-4621-41ed-8566-29359a7806d7","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"25"},{"FloatValue":null,"Vector2Value":null,"InputActionChangeType":"OnReleased","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"806c8a48-eb1f-4835-aeb4-4dea231ae000","name":"Break","expectedControlType":"Button","type":"Button","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":-371.0,"y":286.0},"guid":"5940f41a-42f1-45cc-95a5-f4f06fbf7762","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventButton"},{"FloatValue":null,"Vector2Value":null,"InputActionChangeType":"OnPressed","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"806c8a48-eb1f-4835-aeb4-4dea231ae000","name":"Break","expectedControlType":"Button","type":"Button","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":-370.0,"y":13.0},"guid":"a966f080-8f09-4aee-a230-912c20593d4c","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventButton"},{"defaultValues":{},"position":{"x":502.0,"y":99.0},"guid":"e4a61b2c-e509-454e-a072-1ded8e0e996a","$version":"A","$type":"Unity.VisualScripting.GenericMultiply","$id":"33"},{"chainable":false,"member":{"name":"Steering","parameterTypes":null,"targetType":"CarController","targetTypeName":"CarController","$version":"A"},"defaultValues":{"target":null,"input":{"$content":0.0,"$type":"System.Single"}},"position":{"x":1322.0,"y":22.0},"guid":"6ca2ee74-83ab-4361-845d-42037d3b3ca7","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"35"},{"FloatValue":{"unit":{"$ref":"38"}},"Vector2Value":null,"InputActionChangeType":"OnReleased","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"ae9a5ce4-89c9-4219-a86f-b664448948c9","name":"Accelerate","expectedControlType":"Analog","type":"Value","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":291.0,"y":303.0},"guid":"85ea9d0e-5678-48d9-9864-848a6f68a63a","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventFloat","$id":"38"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Maximum
+      Steering Angle","$type":"System.String"},"object":null},"position":{"x":881.0,"y":160.0},"guid":"cef1eba9-38fa-4b02-b4fb-fd85c78a83dc","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"42"},{"defaultValues":{},"position":{"x":1166.0,"y":100.0},"guid":"6e03f422-78cf-48e3-9594-5a6a0871c01b","$version":"A","$type":"Unity.VisualScripting.GenericMultiply","$id":"44"},{"type":"System.Single","value":{"$content":0.0,"$type":"System.Single"},"defaultValues":{},"position":{"x":437.0,"y":440.0},"guid":"35ffac88-5ea1-43cb-95e6-4546bb25eb04","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"46"},{"type":"System.Single","value":{"$content":0.0,"$type":"System.Single"},"defaultValues":{},"position":{"x":1105.0,"y":438.0},"guid":"84386868-9237-4fc0-b9bf-ad9a558cd2c0","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"48"},{"FloatValue":{"unit":{"$ref":"50"}},"Vector2Value":null,"InputActionChangeType":"OnHold","coroutine":false,"defaultValues":{"Target":null,"InputAction":{"id":"5306bcb2-0ed5-411f-8102-002fe7869a9e","name":"Steering","expectedControlType":"Axis","type":"Value","$type":"UnityEngine.InputSystem.InputAction"}},"position":{"x":875.0,"y":17.0},"guid":"f95c27d3-b18c-4006-822d-602dfb869f74","$version":"A","$type":"Unity.VisualScripting.InputSystem.OnInputSystemEventFloat","$id":"50"},{"chainable":false,"member":{"name":"Motor","parameterTypes":null,"targetType":"CarController","targetTypeName":"CarController","$version":"A"},"defaultValues":{"target":null,"input":{"$content":0.0,"$type":"System.Single"}},"position":{"x":664.0,"y":18.0},"guid":"4d3e8a6c-83ce-4bcb-b2ec-3e488325a58a","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"54"},{"chainable":false,"member":{"name":"Motor","parameterTypes":null,"targetType":"CarController","targetTypeName":"CarController","$version":"A"},"defaultValues":{"target":null,"input":{"$content":0.0,"$type":"System.Single"}},"position":{"x":603.0,"y":307.0},"guid":"2b4a1d4c-def5-4db2-8df4-44c64f5cfae6","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"57"},{"sourceUnit":{"$ref":"16"},"sourceKey":"trigger","destinationUnit":{"$ref":"20"},"destinationKey":"assign","guid":"9c31f9cc-d682-452d-9ae7-347bcb6a0c70","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"54"},"destinationKey":"assign","guid":"d93b56be-caa3-4eaa-8f59-4a3b2098cab5","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"50"},"sourceKey":"trigger","destinationUnit":{"$ref":"35"},"destinationKey":"assign","guid":"b719cfcd-bd36-4064-a4df-8700b04aa85a","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"38"},"sourceKey":"trigger","destinationUnit":{"$ref":"57"},"destinationKey":"assign","guid":"5a26466e-fa80-4eba-8faf-d64e6883bfa7","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"44"},"sourceKey":"product","destinationUnit":{"$ref":"35"},"destinationKey":"input","guid":"8a55cdab-a924-4d9e-866b-8b8556d2285a","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"FloatValue","destinationUnit":{"$ref":"33"},"destinationKey":"a","guid":"7b2fb66e-67a1-4e96-9ae8-24b9a3a878e8","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"42"},"sourceKey":"value","destinationUnit":{"$ref":"44"},"destinationKey":"b","guid":"d2c07e84-362c-4377-b3f7-6f048fdeddd7","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"50"},"sourceKey":"FloatValue","destinationUnit":{"$ref":"44"},"destinationKey":"a","guid":"af492256-a9a3-4ff0-8162-ba5189b390c6","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"33"},"sourceKey":"product","destinationUnit":{"$ref":"54"},"destinationKey":"input","guid":"672781e5-6edf-4891-a833-320ef09dc0db","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"25"},"sourceKey":"value","destinationUnit":{"$ref":"33"},"destinationKey":"b","guid":"cd545e23-6b86-442b-ad06-53b7b01fbc4b","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"46"},"sourceKey":"output","destinationUnit":{"$ref":"57"},"destinationKey":"input","guid":"448b1be0-1057-4e34-88d2-c1024903b0a4","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"48"},"sourceKey":"output","destinationUnit":{"$ref":"20"},"destinationKey":"input","guid":"e4f8dcbc-d86a-4b33-926b-a83bee6741ca","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
     _objectReferences: []
 --- !u!114 &1220560899336154443
 MonoBehaviour:
@@ -2191,17 +2159,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2883b56034724d545aa892b17c997d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 1000
-  brakeForce: 3000
-  maximumSteeringAngle: 30
-  frontRightWheelCollider: {fileID: 4360994307715212749}
-  frontLeftWheelCollider: {fileID: 4360994307742560207}
-  rearRightWheelCollider: {fileID: 4360994308096782179}
-  rearLeftWheelCollider: {fileID: 4360994307393082873}
-  frontRightWheelTransform: {fileID: 4360994307440998214}
-  frontLeftWheelTransform: {fileID: 4360994308190351684}
-  rearRightWheelTransform: {fileID: 4360994309189297562}
-  rearLeftWheelTransform: {fileID: 4360994308460416555}
+  axleInfos:
+  - leftWheel: {fileID: 4360994307742560207}
+    rightWheel: {fileID: 4360994307715212749}
+    motor: 1
+    steering: 1
+  - leftWheel: {fileID: 4360994307393082873}
+    rightWheel: {fileID: 4360994308096782179}
+    motor: 1
+    steering: 0
 --- !u!1 &4360994307594114050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2225,7 +2191,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360994307594114050}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2234,7 +2200,7 @@ Transform:
   - {fileID: 4360994307742560200}
   - {fileID: 4360994308096782188}
   - {fileID: 4360994307393082874}
-  m_Father: {fileID: 4360994307291775772}
+  m_Father: {fileID: 4360994307573884859}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4360994307715212751
@@ -2265,7 +2231,8 @@ Transform:
   m_LocalPosition: {x: -0.77, y: -0.381, z: 1.837}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4360994307440998214}
   m_Father: {fileID: 4360994307594114049}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2277,7 +2244,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360994307715212751}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.35
+  m_Radius: 0.5
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -2293,7 +2260,7 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
@@ -2327,7 +2294,8 @@ Transform:
   m_LocalPosition: {x: 0.77, y: -0.381, z: 1.837}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4360994308190351684}
   m_Father: {fileID: 4360994307594114049}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2339,7 +2307,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360994307742560201}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.35
+  m_Radius: 0.5
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -2355,7 +2323,7 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
@@ -2389,7 +2357,8 @@ Transform:
   m_LocalPosition: {x: -0.77, y: -0.381, z: -1.378}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4360994309189297562}
   m_Father: {fileID: 4360994307594114049}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2401,7 +2370,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360994308096782189}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.35
+  m_Radius: 0.5
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -2417,7 +2386,7 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
+    m_ExtremumSlip: 1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
@@ -2450,13 +2419,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360994308190351685}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.77, y: -0.53, z: 1.837}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.14899996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4360994308243223671}
-  m_RootOrder: 1
+  m_Father: {fileID: 4360994307742560200}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4360994308190351704
 MonoBehaviour:
@@ -3904,74 +3873,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360994308190351685}
   m_Mesh: {fileID: 0}
---- !u!1 &4360994308243223664
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4360994308243223671}
-  m_Layer: 0
-  m_Name: Wheels
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4360994308243223671
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4360994308243223664}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4360994307440998214}
-  - {fileID: 4360994308190351684}
-  - {fileID: 4360994309189297562}
-  - {fileID: 4360994308460416555}
-  m_Father: {fileID: 4360994308442343903}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4360994308442343896
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4360994308442343903}
-  m_Layer: 0
-  m_Name: Graphics
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4360994308442343903
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4360994308442343896}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4360994307419256275}
-  - {fileID: 4360994308243223671}
-  m_Father: {fileID: 4360994307573884859}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4360994308460416532
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,13 +3900,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360994308460416532}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.77, y: -0.53, z: -1.378}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.14899996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4360994308243223671}
-  m_RootOrder: 3
+  m_Father: {fileID: 4360994307393082874}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4360994308460416559
 MonoBehaviour:
@@ -5477,12 +5378,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360994309166749862}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4360994307291775772}
+  m_Children:
+  - {fileID: 4360994307419256275}
+  m_Father: {fileID: 4360994307573884859}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4360994309166749860
@@ -5525,13 +5427,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360994309189297563}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.77, y: -0.53, z: -1.378}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.14899996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4360994308243223671}
-  m_RootOrder: 2
+  m_Father: {fileID: 4360994308096782188}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4360994309189297566
 MonoBehaviour:
