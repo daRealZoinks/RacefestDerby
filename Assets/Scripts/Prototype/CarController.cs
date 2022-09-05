@@ -16,7 +16,7 @@ namespace Prototype
     public class CarController : MonoBehaviour
     {
         private Rigidbody _rigidbody;
-        
+
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -47,24 +47,24 @@ namespace Prototype
                 ApplyLocalPositionToVisuals(axleInfo.leftWheel);
                 ApplyLocalPositionToVisuals(axleInfo.rightWheel);
 
-                ApplyExtremumValueToWheel(axleInfo.leftWheel,axleInfo.wheelGripCurve.Evaluate(Mathf.Abs(_rigidbody.velocity.magnitude)));
-                ApplyExtremumValueToWheel(axleInfo.rightWheel,axleInfo.wheelGripCurve.Evaluate(Mathf.Abs(_rigidbody.velocity.magnitude)));
+                ApplyExtremumValueToWheel(axleInfo.leftWheel, axleInfo.wheelGripCurve.Evaluate(Mathf.Abs(_rigidbody.velocity.magnitude)));
+                ApplyExtremumValueToWheel(axleInfo.rightWheel, axleInfo.wheelGripCurve.Evaluate(Mathf.Abs(_rigidbody.velocity.magnitude)));
             }
         }
-        
+
         private void ApplyExtremumValueToWheel(WheelCollider wheel, float value)
         {
             var leftWheelTransform = wheel.transform;
             var leftWheelPosition = leftWheelTransform.position;
-                
+
             var steeringVelocity = Vector3.Cross(leftWheelTransform.right, leftWheelPosition);
             var desiredVelocityChange = -steeringVelocity.magnitude * value;
-                
+
             var leftCurve = wheel.sidewaysFriction;
-            leftCurve.extremumValue = desiredVelocityChange;
+            leftCurve.extremumSlip = desiredVelocityChange;
             wheel.sidewaysFriction = leftCurve;
         }
-        
+
         private void ApplyLocalPositionToVisuals(WheelCollider wheelCollider)
         {
             var visualWheel = wheelCollider.transform.GetChild(0);
